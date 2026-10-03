@@ -97,6 +97,12 @@ Residual Risk: Low to Medium. There is still risk from insider misuse, misconfig
 **6. Is this mitigation sufficient to accept the remaining risk? If so, why? If not, what else could you do?**
 No, it's not fully sufficient. It's sufficient to reduce the biggest risk of the organization. However, some additional recommendations are: upgrading off of Windows Server 2003 platforms, separating and tightening security around backup admin credentials (MFA preferred), implementing regular testing on backups, and implementing more network segmentation and firewalls to add additional layers of security.
 
+## Looking Back
+
+If I did this assessment again, there are two ratings I'd change. I rated the desktop network's probability as Medium because I assumed users were limited to approved business websites, but the scenario said there were no firewalls, meaning nothing was actually enforcing that limit. Without that assumption the probability moves up to High, and the desktop network ties the backup server at 20 (Very High), which honestly makes more sense, since a compromised desktop is exactly the foothold I said an attacker would need to reach the backup server.
+
+I'd also rethink the web server's impact. I rated it Low because I assumed the site could be restored quickly from backup, but the assignment said to assume no mitigations, and the backup server is the asset I rated as the biggest risk. Rebuilding an unsupported server would more realistically take hours, which is Medium impact and moves the web server from a 10 to a 15 (High). Every rating rests on assumptions, and the assumptions have to match the environment.****
+
 ## Skills Used
 
 Risk assessment, asset and vulnerability identification, threat identification, qualitative risk scoring (probability x impact), CVE research, legacy and end-of-life system analysis, network architecture review, mitigation and residual risk planning, Excel (lookup formulas and a risk register), technical writing
